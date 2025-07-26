@@ -340,7 +340,7 @@
             <!-- Contact Form -->
             <div class="contact-form">
                 <h3>Send us a Message</h3>
-                <form id="contactForm">
+                <form id="contactForm" action="https://formspree.io/f/xyzpwooo" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -374,6 +374,10 @@
                         <label for="message">Message *</label>
                         <textarea id="message" name="message" placeholder="Please provide details about your inquiry..." required></textarea>
                     </div>
+
+                    <!-- Formspree hidden fields -->
+                    <input type="hidden" name="_subject" value="Contact Form Submission - The Quant Brief">
+                    <input type="hidden" name="source" value="contact_page">
 
                     <button type="submit" class="form-submit">Send Message</button>
                 </form>
