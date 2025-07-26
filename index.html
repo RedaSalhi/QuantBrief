@@ -390,8 +390,10 @@
         <div class="subscribe-container">
             <h2>Subscribe to The Quant Brief</h2>
             <p>Join institutional investors and portfolio managers who rely on our weekly analysis. Be among the first to receive our inaugural issue.</p>
-            <form class="subscribe-form" id="subscribeForm">
-                <input type="email" placeholder="Enter your professional email" required>
+            <form class="subscribe-form" id="subscribeForm" action="https://formspree.io/f/xyzpwooo" method="POST">
+                <input type="email" name="email" placeholder="Enter your professional email" required>
+                <input type="hidden" name="_subject" value="New Newsletter Subscription">
+                <input type="hidden" name="source" value="homepage">
                 <button type="submit">Subscribe</button>
             </form>
             <p class="subscribe-note">Professional subscribers only. Unsubscribe anytime.</p>
