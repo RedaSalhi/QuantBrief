@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - The Quant Brief</title>
+    <meta name="description" content="Get in touch with The Quant Brief team">
+    <meta name="keywords" content="quantitative finance, investment analysis, market research, portfolio management">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact - The Quant Brief">
+    <meta property="og:description" content="Get in touch with The Quant Brief team">
+    <meta property="og:url" content="https://thequantbrief.com/contact">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/shared-styles.css">
+    
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, var(--anthropic-warm-white) 0%, var(--anthropic-beige) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .contact-content {
+            background: var(--anthropic-warm-white);
+            padding: 4rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: var(--anthropic-beige);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--anthropic-dark);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--crimson), var(--crimson-hover));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--anthropic-dark);
+        }
+
+        .contact-details p {
+            color: var(--anthropic-medium);
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: var(--crimson);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: var(--anthropic-warm-white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--anthropic-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--anthropic-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--anthropic-light-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            background: var(--anthropic-beige);
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--crimson);
+            box-shadow: 0 0 0 3px var(--crimson-light);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            background: var(--crimson);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background: var(--crimson-hover);
+            transform: translateY(-2px);
+        }
+
+        .form-submit:disabled {
+            background: var(--anthropic-medium);
+            transform: none;
+            cursor: not-allowed;
+        }
+
+        .faq-section {
+            background: var(--anthropic-beige);
+            padding: 4rem 2rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--anthropic-warm-white);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: none;
+            border: none;
+            width: 100%;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--anthropic-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--anthropic-beige);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--crimson);
+            transition: var(--transition);
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--anthropic-medium);
+            line-height: 1.6;
+        }
+
+        .response-time {
+            background: var(--success);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">QB</div>
+                <div class="logo-text">
+                    <h1>The Quant Brief</h1>
+                    <p>Professional Investment Intelligence</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <a href="index.html#subscribe" class="cta-button">Subscribe</a>
+        </nav>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="page-header">
+                <h1>Get in Touch</h1>
+                <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h4>General Inquiries</h4>
+                        <p><a href="mailto:contact@thequantbrief.com">contact@thequantbrief.com</a></p>
+                        <p>For general questions, partnerships, and business inquiries</p>
+                        <div class="response-time">Response within 24 hours</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🔬</div>
+                    <div class="contact-details">
+                        <h4>Research & Editorial</h4>
+                        <p><a href="mailto:research@thequantbrief.com">research@thequantbrief.com</a></p>
+                        <p>Questions about our methodology, data sources, or content suggestions</p>
+                        <div class="response-time">Response within 48 hours</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🛠️</div>
+                    <div class="contact-details">
+                        <h4>Technical Support</h4>
+                        <p><a href="mailto:support@thequantbrief.com">support@thequantbrief.com</a></p>
+                        <p>Subscription issues, access problems, or technical difficulties</p>
+                        <div class="response-time">Response within 12 hours</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🤝</div>
+                    <div class="contact-details">
+                        <h4>Media & Press</h4>
+                        <p><a href="mailto:press@thequantbrief.com">press@thequantbrief.com</a></p>
+                        <p>Media inquiries, interview requests, and press materials</p>
+                        <div class="response-time">Response within 6 hours</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company/Organization</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="subscription">Subscription Question</option>
+                            <option value="research">Research Inquiry</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="media">Media/Press Inquiry</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" placeholder="Please provide details about your inquiry..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                <div class="page-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Quick answers to common questions about The Quant Brief</p>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        When will the first issue be published?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our inaugural issue is scheduled for February 3, 2025. Early subscribers will be notified as soon as it's available and will receive exclusive access to our launch content.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What is the subscription cost?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pricing details will be announced closer to launch. Early subscribers will receive special introductory pricing and will be grandfathered into this rate for their first year.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Who is the target audience?
+                    </button>
+                    <div class="faq-answer">
+                        <p>The Quant Brief is designed for institutional investors, portfolio managers, research analysts, and finance professionals who need sophisticated market analysis and quantitative insights.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How long does each newsletter take to read?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Each issue is designed to be read in approximately 5 minutes, with key insights highlighted for busy professionals who need to stay informed efficiently.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I suggest topics for coverage?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We welcome topic suggestions from our subscribers. Please email research@thequantbrief.com with your ideas and we'll consider them for future issues.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Do you offer institutional subscriptions?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer special pricing and features for institutional subscribers including team access, custom research, and direct analyst contact. Contact us for details.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What makes this different from other financial newsletters?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We focus exclusively on quantitative analysis with academic rigor, provide transparent methodology, and bridge the gap between cutting-edge research and practical application.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>The Quant Brief</h3>
+                <p>Professional investment intelligence for quantitative finance professionals and institutional investors.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About</a></p>
+                <p><a href="features.html">Features</a></p>
+                <p><a href="index.html#subscribe">Subscribe</a></p>
+                <p><a href="archive.html">Archive</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:contact@thequantbrief.com">contact@thequantbrief.com</a></p>
+                <p><a href="mailto:research@thequantbrief.com">research@thequantbrief.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p><a href="#privacy">Privacy Policy</a></p>
+                <p><a href="#terms">Terms of Service</a></p>
+                <p><a href="#disclaimer">Disclaimer</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Quant Brief. All rights reserved. | Professional Investment Intelligence</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitButton = this.querySelector('.form-submit');
+            
+            // Disable submit button
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            
+            // Simple form validation
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            if (name && email && subject && message) {
+                // Simulate form submission (replace with actual implementation)
+                setTimeout(() => {
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                    this.reset();
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+                }, 1000);
+            } else {
+                alert('Please fill in all required fields.');
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            }
+        });
+
+        // FAQ toggle functionality
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('active');
+            });
+            
+            // Toggle current FAQ
+            if (!isActive) {
+                button.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
