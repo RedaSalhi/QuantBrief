@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - The Quant Brief</title>
+    <meta name="description" content="Learn about The Quant Brief's mission to provide professional investment intelligence">
+    <meta name="keywords" content="quantitative finance, investment analysis, market research, portfolio management">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About - The Quant Brief">
+    <meta property="og:description" content="Learn about The Quant Brief's mission to provide professional investment intelligence">
+    <meta property="og:url" content="https://thequantbrief.com/about">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/shared-styles.css">
+    
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, var(--anthropic-warm-white) 0%, var(--anthropic-beige) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .mission-section {
+            padding: 4rem 2rem;
+            background: var(--anthropic-warm-white);
+        }
+
+        .team-section {
+            padding: 4rem 2rem;
+            background: var(--anthropic-beige);
+        }
+
+        .values-section {
+            padding: 4rem 2rem;
+            background: var(--anthropic-warm-white);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--anthropic-dark);
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--anthropic-medium);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-content .highlight {
+            background: var(--crimson-light);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--crimson);
+            font-weight: 600;
+        }
+
+        .value-card {
+            background: var(--anthropic-beige);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px var(--shadow-medium);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--crimson), var(--crimson-hover));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--anthropic-dark);
+        }
+
+        .value-card p {
+            color: var(--anthropic-medium);
+            line-height: 1.6;
+        }
+
+        .team-member {
+            background: var(--anthropic-warm-white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px var(--shadow-medium);
+        }
+
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--crimson), var(--crimson-hover));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--anthropic-dark);
+        }
+
+        .team-member .role {
+            color: var(--crimson);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-member p {
+            color: var(--anthropic-medium);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            background: var(--anthropic-dark);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">QB</div>
+                <div class="logo-text">
+                    <h1>The Quant Brief</h1>
+                    <p>Professional Investment Intelligence</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="index.html#subscribe" class="cta-button">Subscribe</a>
+        </nav>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="page-header">
+                <h1>About The Quant Brief</h1>
+                <p>Bridging the gap between academic research and practical investment management</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Our Mission</h2>
+                <p>The Quant Brief was founded with a simple yet ambitious goal: to democratize access to <span class="highlight">institutional-quality investment research</span> for professional investors worldwide.</p>
+                
+                <p>In an era where information asymmetry can make or break investment strategies, we believe that every portfolio manager, research analyst, and institutional investor deserves access to the same caliber of quantitative analysis that drives the world's most successful investment firms.</p>
+                
+                <p>Our weekly newsletter distills complex market dynamics, academic research, and quantitative insights into actionable intelligence that busy professionals can digest in just <span class="highlight">5 minutes</span>.</p>
+                
+                <p>We don't just report what happened in the markets – we help you understand <em>why</em> it happened, what it means for your portfolio, and how to position for what comes next.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="page-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide every piece of analysis we publish</p>
+            </div>
+            
+            <div class="grid-3">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Precision</h3>
+                    <p>Every data point is verified, every analysis is rigorous, and every recommendation is backed by quantitative evidence.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Relevance</h3>
+                    <p>We focus on insights that matter for today's markets, cutting through noise to deliver actionable intelligence.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🔬</div>
+                    <h3>Independence</h3>
+                    <p>Our analysis is unbiased, data-driven, and free from conflicts of interest that plague sell-side research.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">📚</div>
+                    <h3>Education</h3>
+                    <p>We don't just share conclusions – we explain our methodology so you can apply these frameworks yourself.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🌐</div>
+                    <h3>Accessibility</h3>
+                    <p>Complex quantitative concepts presented clearly, making sophisticated analysis accessible to all professionals.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Innovation</h3>
+                    <p>Constantly exploring new methodologies, data sources, and analytical frameworks to stay ahead of the curve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="page-header">
+                <h2>Meet Our Team</h2>
+                <p>Experienced professionals from leading investment firms and academic institutions</p>
+            </div>
+            
+            <div class="grid-2">
+                <div class="team-member">
+                    <div class="member-avatar">RS</div>
+                    <h3>Reda Salhi</h3>
+                    <div class="role">Founder & Chief Analyst</div>
+                    <p>Former quantitative researcher with experience at leading investment management firms. Specialized in systematic strategies, risk management, and market microstructure analysis. PhD in Quantitative Finance.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">QB</div>
+                    <h3>Research Team</h3>
+                    <div class="role">Contributing Analysts</div>
+                    <p>Our research team comprises analysts from top-tier investment banks, hedge funds, and academic institutions, bringing diverse perspectives and deep expertise across asset classes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Us Different -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>What Makes Us Different</h2>
+                
+                <p><strong>No Fluff, Only Substance:</strong> While other newsletters pad their content with market commentary, we focus exclusively on <span class="highlight">actionable insights</span> that can improve your investment process.</p>
+                
+                <p><strong>Academic Rigor, Practical Application:</strong> We bridge the gap between cutting-edge academic research and real-world portfolio management, translating complex theories into implementable strategies.</p>
+                
+                <p><strong>Multi-Asset Perspective:</strong> Our analysis spans equities, fixed income, currencies, and commodities, providing a holistic view of market dynamics and cross-asset relationships.</p>
+                
+                <p><strong>Risk-First Approach:</strong> Every recommendation includes thorough risk analysis, helping you understand not just the potential returns, but the potential pitfalls.</p>
+                
+                <p><strong>Transparent Methodology:</strong> We show our work. Our models, assumptions, and data sources are clearly documented, allowing you to validate and adapt our frameworks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Elevate Your Investment Process?</h2>
+            <p>Join institutional investors who rely on The Quant Brief for market-leading analysis</p>
+            <a href="index.html#subscribe" class="btn-primary">Subscribe Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>The Quant Brief</h3>
+                <p>Professional investment intelligence for quantitative finance professionals and institutional investors.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About</a></p>
+                <p><a href="features.html">Features</a></p>
+                <p><a href="index.html#subscribe">Subscribe</a></p>
+                <p><a href="archive.html">Archive</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:contact@thequantbrief.com">contact@thequantbrief.com</a></p>
+                <p><a href="mailto:research@thequantbrief.com">research@thequantbrief.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p><a href="#privacy">Privacy Policy</a></p>
+                <p><a href="#terms">Terms of Service</a></p>
+                <p><a href="#disclaimer">Disclaimer</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Quant Brief. All rights reserved. | Professional Investment Intelligence</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
