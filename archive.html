@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive - The Quant Brief</title>
+    <meta name="description" content="Browse past issues of The Quant Brief newsletter">
+    <meta name="keywords" content="quantitative finance, investment analysis, market research, portfolio management">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Archive - The Quant Brief">
+    <meta property="og:description" content="Browse past issues of The Quant Brief newsletter">
+    <meta property="og:url" content="https://thequantbrief.com/archive">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/shared-styles.css">
+    
+    <style>
+        .archive-hero {
+            background: linear-gradient(135deg, var(--anthropic-warm-white) 0%, var(--anthropic-beige) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .search-filters {
+            background: var(--anthropic-warm-white);
+            padding: 2rem;
+            border-bottom: 1px solid var(--anthropic-light-gray);
+        }
+
+        .filters-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--anthropic-light-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            background: var(--anthropic-beige);
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--crimson);
+            box-shadow: 0 0 0 3px var(--crimson-light);
+        }
+
+        .filter-select {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--anthropic-light-gray);
+            border-radius: var(--border-radius);
+            background: var(--anthropic-beige);
+            color: var(--anthropic-dark);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--crimson);
+        }
+
+        .coming-soon-notice {
+            background: var(--warning);
+            color: var(--anthropic-dark);
+            padding: 1rem 2rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            margin: 2rem auto;
+            max-width: 600px;
+            font-weight: 600;
+        }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .newsletter-card {
+            background: var(--anthropic-warm-white);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .newsletter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px var(--shadow-medium);
+        }
+
+        .card-header {
+            background: var(--crimson);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .issue-number {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .issue-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .issue-date {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .issue-preview {
+            color: var(--anthropic-medium);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .issue-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .topic-tag {
+            background: var(--anthropic-beige);
+            color: var(--anthropic-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--crimson);
+            border: 2px solid var(--crimson);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--crimson);
+            color: white;
+        }
+
+        .subscription-cta {
+            background: var(--anthropic-dark);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .subscription-cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .subscription-cta p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .preview-samples {
+            background: var(--anthropic-beige);
+            padding: 4rem 2rem;
+        }
+
+        .sample-card {
+            background: var(--anthropic-warm-white);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
+            overflow: hidden;
+            transition: var(--transition);
+            opacity: 0.7;
+        }
+
+        .sample-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--shadow-light);
+            opacity: 1;
+        }
+
+        .sample-overlay {
+            position: relative;
+        }
+
+        .sample-overlay::after {
+            content: 'Sample Issue - Subscribe to Access';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--crimson);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .filters-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-input {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">QB</div>
+                <div class="logo-text">
+                    <h1>The Quant Brief</h1>
+                    <p>Professional Investment Intelligence</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="archive.html" class="active">Archive</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="index.html#subscribe" class="cta-button">Subscribe</a>
+        </nav>
+    </header>
+
+    <!-- Archive Hero -->
+    <section class="archive-hero">
+        <div class="container">
+            <div class="page-header">
+                <h1>Newsletter Archive</h1>
+                <p>Browse and search through our comprehensive collection of market intelligence</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section class="search-filters">
+        <div class="filters-container">
+            <input type="text" class="search-input" placeholder="Search topics, keywords, or market events..." id="searchInput">
+            <select class="filter-select" id="yearFilter">
+                <option value="">All Years</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+            </select>
+            <select class="filter-select" id="topicFilter">
+                <option value="">All Topics</option>
+                <option value="equity">Equity Markets</option>
+                <option value="fixed-income">Fixed Income</option>
+                <option value="currencies">Currencies</option>
+                <option value="commodities">Commodities</option>
+                <option value="risk">Risk Management</option>
+                <option value="research">Research</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Coming Soon Notice -->
+    <section class="main-content">
+        <div class="container">
+            <div class="coming-soon-notice">
+                🚀 Archive Coming Soon - Our first issue launches February 2025
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Issues -->
+    <section class="preview-samples">
+        <div class="container">
+            <div class="page-header">
+                <h2>Sample Issues</h2>
+                <p>Preview our format and content structure with these example newsletters</p>
+            </div>
+            
+            <div class="archive-grid">
+                <!-- Sample Issue 1 -->
+                <div class="newsletter-card sample-card">
+                    <div class="sample-overlay">
+                        <div class="card-header">
+                            <div class="issue-number">Issue #1</div>
+                            <div class="issue-title">Market Turbulence & Opportunity</div>
+                            <div class="issue-date">February 3, 2025</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="issue-preview">
+                                Federal Reserve pivot signals shift in monetary policy. Tech sector rotation accelerates as value factors outperform. Credit spreads widen amid banking sector volatility. Alternative data reveals institutional positioning changes.
+                            </div>
+                            <div class="issue-topics">
+                                <span class="topic-tag">Fed Policy</span>
+                                <span class="topic-tag">Sector Rotation</span>
+                                <span class="topic-tag">Credit Markets</span>
+                                <span class="topic-tag">Factor Analysis</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="btn-outline">Preview</a>
+                                <a href="#" class="btn-outline">Download PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Issue 2 -->
+                <div class="newsletter-card sample-card">
+                    <div class="sample-overlay">
+                        <div class="card-header">
+                            <div class="issue-number">Issue #2</div>
+                            <div class="issue-title">Earnings Season Dynamics</div>
+                            <div class="issue-date">February 10, 2025</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="issue-preview">
+                                Q4 earnings reveal margin compression across sectors. Options flow indicates defensive positioning ahead of key economic data. Cross-asset volatility patterns suggest regime change. ESG factor performance divergence accelerates.
+                            </div>
+                            <div class="issue-topics">
+                                <span class="topic-tag">Earnings</span>
+                                <span class="topic-tag">Options Flow</span>
+                                <span class="topic-tag">Volatility</span>
+                                <span class="topic-tag">ESG Factors</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="btn-outline">Preview</a>
+                                <a href="#" class="btn-outline">Download PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Issue 3 -->
+                <div class="newsletter-card sample-card">
+                    <div class="sample-overlay">
+                        <div class="card-header">
+                            <div class="issue-number">Issue #3</div>
+                            <div class="issue-title">Global Macro Inflection</div>
+                            <div class="issue-date">February 17, 2025</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="issue-preview">
+                                Central bank divergence creates currency volatility. Emerging market flows reverse on policy uncertainty. Commodity supercycle thesis tested by demand slowdown. Machine learning models signal trend exhaustion.
+                            </div>
+                            <div class="issue-topics">
+                                <span class="topic-tag">Central Banks</span>
+                                <span class="topic-tag">Currencies</span>
+                                <span class="topic-tag">Emerging Markets</span>
+                                <span class="topic-tag">ML Signals</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="btn-outline">Preview</a>
+                                <a href="#" class="btn-outline">Download PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Issue 4 -->
+                <div class="newsletter-card sample-card">
+                    <div class="sample-overlay">
+                        <div class="card-header">
+                            <div class="issue-number">Issue #4</div>
+                            <div class="issue-title">Risk Parity Renaissance</div>
+                            <div class="issue-date">February 24, 2025</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="issue-preview">
+                                Academic research validates new risk parity approaches. Alternative risk premia strategies gain institutional adoption. Correlation structures breakdown during market stress. Factor timing models show promising results.
+                            </div>
+                            <div class="issue-topics">
+                                <span class="topic-tag">Risk Parity</span>
+                                <span class="topic-tag">Alt Risk Premia</span>
+                                <span class="topic-tag">Correlations</span>
+                                <span class="topic-tag">Factor Timing</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="#" class="btn-outline">Preview</a>
+                                <a href="#" class="btn-outline">Download PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription CTA -->
+    <section class="subscription-cta">
+        <div class="container">
+            <h2>Get Full Access to Our Archive</h2>
+            <p>Subscribe to receive our weekly newsletter and gain access to our complete archive of market intelligence</p>
+            <a href="index.html#subscribe" class="btn-primary">Subscribe Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>The Quant Brief</h3>
+                <p>Professional investment intelligence for quantitative finance professionals and institutional investors.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About</a></p>
+                <p><a href="features.html">Features</a></p>
+                <p><a href="index.html#subscribe">Subscribe</a></p>
+                <p><a href="archive.html">Archive</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:contact@thequantbrief.com">contact@thequantbrief.com</a></p>
+                <p><a href="mailto:research@thequantbrief.com">research@thequantbrief.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p><a href="#privacy">Privacy Policy</a></p>
+                <p><a href="#terms">Terms of Service</a></p>
+                <p><a href="#disclaimer">Disclaimer</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Quant Brief. All rights reserved. | Professional Investment Intelligence</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Archive-specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const yearFilter = document.getElementById('yearFilter');
+            const topicFilter = document.getElementById('topicFilter');
+            
+            // Search and filter functionality (placeholder for future implementation)
+            function filterArchive() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedYear = yearFilter.value;
+                const selectedTopic = topicFilter.value;
+                
+                // Future implementation: filter newsletter cards based on criteria
+                console.log('Filtering archive:', { searchTerm, selectedYear, selectedTopic });
+            }
+            
+            searchInput.addEventListener('input', filterArchive);
+            yearFilter.addEventListener('change', filterArchive);
+            topicFilter.addEventListener('change', filterArchive);
+        });
+    </script>
+</body>
+</html>
