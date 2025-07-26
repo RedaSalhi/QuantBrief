@@ -249,15 +249,7 @@
             margin-top: 1rem;
         }
 
-        /* Success message styles */
-        .form-success {
-            background: var(--success);
-            color: white;
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 1rem;
-            display: none;
-        }
+
 
         @media (max-width: 768px) {
             .contact-grid {
@@ -557,13 +549,10 @@
             <div class="contact-form">
                 <h3>Send us a Message</h3>
                 
-                <!-- Success message (hidden by default) -->
-                <div id="formSuccess" class="form-success">
-                    Thank you for your message! We'll get back to you soon.
-                </div>
+
 
                 <!-- This form will submit directly to Formspree -->
-                <form id="contactForm" action="https://formspree.io/f/mqalqnjg" method="POST">
+                <form action="https://formspree.io/f/mqalqnjg" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -600,8 +589,6 @@
 
                     <!-- Formspree configuration -->
                     <input type="hidden" name="_subject" value="Contact Form Submission - The Quant Brief">
-                    <input type="hidden" name="_next" value="https://thequantbrief.com/contact.html?success=true">
-                    <input type="hidden" name="_captcha" value="false">
 
                     <button type="submit" class="form-submit">Send Message</button>
                 </form>
@@ -716,36 +703,18 @@
     </footer>
 
     <script>
-        // Check for success parameter in URL
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('success') === 'true') {
-                document.getElementById('formSuccess').style.display = 'block';
-                // Optionally scroll to the success message
-                document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth' });
-            }
-
-            // Form submission handling - just show loading state
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function() {
-                const submitButton = this.querySelector('.form-submit');
-                submitButton.textContent = 'Sending...';
-                submitButton.disabled = true;
-            });
-        });
-
-        // FAQ toggle functionality
+        /* FAQ toggle functionality */
         function toggleFAQ(button) {
             const answer = button.nextElementSibling;
             const isActive = button.classList.contains('active');
             
-            // Close all other FAQs
+            /* Close all other FAQs */
             document.querySelectorAll('.faq-question').forEach(q => {
                 q.classList.remove('active');
                 q.nextElementSibling.classList.remove('active');
             });
             
-            // Toggle current FAQ
+            /* Toggle current FAQ */
             if (!isActive) {
                 button.classList.add('active');
                 answer.classList.add('active');
