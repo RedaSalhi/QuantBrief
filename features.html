@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - The Quant Brief</title>
+    <meta name="description" content="Discover the comprehensive features of The Quant Brief newsletter">
+    <meta name="keywords" content="quantitative finance, investment analysis, market research, portfolio management">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Features - The Quant Brief">
+    <meta property="og:description" content="Discover the comprehensive features of The Quant Brief newsletter">
+    <meta property="og:url" content="https://thequantbrief.com/features">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/shared-styles.css">
+    
+    <style>
+        .features-hero {
+            background: linear-gradient(135deg, var(--anthropic-warm-white) 0%, var(--anthropic-beige) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--anthropic-warm-white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px var(--shadow-medium);
+            border-color: var(--crimson-light);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--crimson), var(--crimson-hover));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--anthropic-dark);
+        }
+
+        .feature-card p {
+            color: var(--anthropic-medium);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .feature-highlights {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-highlights li {
+            color: var(--anthropic-medium);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--crimson);
+            font-weight: bold;
+        }
+
+        .content-preview {
+            background: var(--anthropic-beige);
+            padding: 4rem 2rem;
+        }
+
+        .preview-item {
+            background: var(--anthropic-warm-white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .preview-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--crimson);
+            margin-bottom: 1rem;
+        }
+
+        .preview-item p {
+            color: var(--anthropic-medium);
+            line-height: 1.6;
+        }
+
+        .data-sources {
+            background: var(--anthropic-warm-white);
+            padding: 4rem 2rem;
+        }
+
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .source-item {
+            background: var(--anthropic-beige);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid var(--anthropic-light-gray);
+            transition: var(--transition);
+        }
+
+        .source-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--shadow-light);
+        }
+
+        .source-item h5 {
+            font-weight: 600;
+            color: var(--anthropic-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .source-item p {
+            font-size: 0.9rem;
+            color: var(--anthropic-medium);
+        }
+
+        .methodology-section {
+            background: var(--anthropic-dark);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .methodology-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .methodology-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .methodology-item h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--crimson);
+            margin-bottom: 1rem;
+        }
+
+        .methodology-item p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: var(--anthropic-beige);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--anthropic-dark);
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--anthropic-medium);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">QB</div>
+                <div class="logo-text">
+                    <h1>The Quant Brief</h1>
+                    <p>Professional Investment Intelligence</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html" class="active">Features</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="index.html#subscribe" class="cta-button">Subscribe</a>
+        </nav>
+    </header>
+
+    <!-- Features Hero -->
+    <section class="features-hero">
+        <div class="container">
+            <div class="page-header">
+                <h1>Comprehensive Market Intelligence</h1>
+                <p>Everything you need to stay ahead in today's complex financial markets</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h2>What You'll Get Every Week</h2>
+                <p>Six core sections designed to enhance your investment decision-making</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Market Analysis</h3>
+                    <p>Comprehensive cross-asset market overview with statistical analysis and performance attribution.</p>
+                    <ul class="feature-highlights">
+                        <li>Equity sector rotation patterns</li>
+                        <li>Fixed income yield curve analysis</li>
+                        <li>Currency volatility assessment</li>
+                        <li>Commodity correlation insights</li>
+                        <li>Cross-asset risk metrics</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Research Spotlight</h3>
+                    <p>Academic paper reviews and quantitative framework analysis with practical implementation guidance.</p>
+                    <ul class="feature-highlights">
+                        <li>Factor model innovations</li>
+                        <li>Risk parity advancements</li>
+                        <li>Alternative data applications</li>
+                        <li>Machine learning in finance</li>
+                        <li>Behavioral finance insights</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚠️</div>
+                    <h3>Risk Management</h3>
+                    <p>Current risk environment assessment with portfolio analytics and mitigation strategies.</p>
+                    <ul class="feature-highlights">
+                        <li>VaR and CVaR analysis</li>
+                        <li>Tail risk assessment</li>
+                        <li>Correlation breakdown alerts</li>
+                        <li>Drawdown analysis</li>
+                        <li>Stress testing scenarios</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Sector Analysis</h3>
+                    <p>Earnings review, sector rotation patterns, and performance attribution analysis.</p>
+                    <ul class="feature-highlights">
+                        <li>Earnings revision trends</li>
+                        <li>Valuation metric analysis</li>
+                        <li>Momentum indicators</li>
+                        <li>Factor exposure breakdown</li>
+                        <li>Relative performance ranking</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Alternative Data</h3>
+                    <p>Sentiment analysis, fund flows, positioning data, and market microstructure insights.</p>
+                    <ul class="feature-highlights">
+                        <li>Social sentiment indicators</li>
+                        <li>ETF flow analysis</li>
+                        <li>Options positioning data</li>
+                        <li>Insider trading patterns</li>
+                        <li>High-frequency signals</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔮</div>
+                    <h3>Forward Looking</h3>
+                    <p>Economic calendar, earnings previews, technical levels, and investment strategy recommendations.</p>
+                    <ul class="feature-highlights">
+                        <li>Key event identification</li>
+                        <li>Earnings impact forecasts</li>
+                        <li>Support/resistance levels</li>
+                        <li>Strategy recommendations</li>
+                        <li>Risk scenario planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Preview -->
+    <section class="content-preview">
+        <div class="container">
+            <div class="page-header">
+                <h2>Sample Content Structure</h2>
+                <p>A glimpse into our weekly newsletter format</p>
+            </div>
+            
+            <div class="preview-item">
+                <h4>📈 Weekly Highlights (2 minutes)</h4>
+                <p>Key market moves, performance leaders/laggards, and the three most important developments that shaped the week. Includes quantitative summary of cross-asset performance and volatility metrics.</p>
+            </div>
+            
+            <div class="preview-item">
+                <h4>🌍 Global Market Overview (1 minute)</h4>
+                <p>Regional equity performance, yield curve movements, currency volatility, and commodity price action. Statistical analysis of correlations and regime changes.</p>
+            </div>
+            
+            <div class="preview-item">
+                <h4>🔍 Deep Dive Analysis (1.5 minutes)</h4>
+                <p>Detailed examination of the week's most significant market development. Could be a sector rotation, policy change, or technical breakout with quantitative framework for analysis.</p>
+            </div>
+            
+            <div class="preview-item">
+                <h4>⚡ Quick Hits (30 seconds)</h4>
+                <p>Rapid-fire insights: earnings surprises, analyst revisions, fund flows, positioning changes, and other data points that matter for portfolio positioning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Sources -->
+    <section class="data-sources">
+        <div class="container">
+            <div class="page-header">
+                <h2>Our Data Sources</h2>
+                <p>Professional-grade data from leading financial information providers</p>
+            </div>
+            
+            <div class="sources-grid">
+                <div class="source-item">
+                    <h5>Bloomberg Terminal</h5>
+                    <p>Real-time market data</p>
+                </div>
+                <div class="source-item">
+                    <h5>Refinitiv Eikon</h5>
+                    <p>Fundamental analysis</p>
+                </div>
+                <div class="source-item">
+                    <h5>FactSet</h5>
+                    <p>Portfolio analytics</p>
+                </div>
+                <div class="source-item">
+                    <h5>MSCI</h5>
+                    <p>Factor models</p>
+                </div>
+                <div class="source-item">
+                    <h5>EPFR</h5>
+                    <p>Fund flow data</p>
+                </div>
+                <div class="source-item">
+                    <h5>CBOE</h5>
+                    <p>Options metrics</p>
+                </div>
+                <div class="source-item">
+                    <h5>Federal Reserve</h5>
+                    <p>Economic indicators</p>
+                </div>
+                <div class="source-item">
+                    <h5>Academic Journals</h5>
+                    <p>Research insights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="methodology-section">
+        <div class="container">
+            <h2>Our Analytical Framework</h2>
+            
+            <div class="methodology-grid">
+                <div class="methodology-item">
+                    <h4>Quantitative Rigor</h4>
+                    <p>Every analysis is backed by statistical testing, hypothesis validation, and robust quantitative frameworks. We show our work and document our assumptions.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <h4>Multi-Timeframe Analysis</h4>
+                    <p>We examine market dynamics across multiple time horizons - from intraday patterns to multi-year cycles - to provide comprehensive context.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <h4>Risk-Adjusted Perspective</h4>
+                    <p>All performance metrics are risk-adjusted using appropriate benchmarks and volatility measures. Returns without risk context are meaningless.</p>
+                </div>
+                
+                <div class="methodology-item">
+                    <h4>Cross-Asset Integration</h4>
+                    <p>Markets don't exist in isolation. Our analysis considers cross-asset relationships, correlation dynamics, and spillover effects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Access Professional Intelligence?</h2>
+            <p>Join institutional investors who rely on our comprehensive market analysis</p>
+            <a href="index.html#subscribe" class="btn-primary">Subscribe Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>The Quant Brief</h3>
+                <p>Professional investment intelligence for quantitative finance professionals and institutional investors.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About</a></p>
+                <p><a href="features.html">Features</a></p>
+                <p><a href="index.html#subscribe">Subscribe</a></p>
+                <p><a href="archive.html">Archive</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:contact@thequantbrief.com">contact@thequantbrief.com</a></p>
+                <p><a href="mailto:research@thequantbrief.com">research@thequantbrief.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p><a href="#privacy">Privacy Policy</a></p>
+                <p><a href="#terms">Terms of Service</a></p>
+                <p><a href="#disclaimer">Disclaimer</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Quant Brief. All rights reserved. | Professional Investment Intelligence</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
