@@ -249,11 +249,227 @@
             margin-top: 1rem;
         }
 
+        /* Success message styles */
+        .form-success {
+            background: var(--success);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+        }
+
+        :root {
+            /* Anthropic Color Palette */
+            --anthropic-beige: #F3F1EB;
+            --anthropic-warm-white: #FEFCF8;
+            --anthropic-dark: #1A1A1A;
+            --anthropic-medium: #6C757D;
+            --anthropic-light-gray: #E9ECEF;
+            --crimson: #DC143C;
+            --crimson-light: #DC143C15;
+            --crimson-hover: #B8112E;
+            --success: #28A745;
+            --warning: #FFC107;
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.12);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--anthropic-beige);
+            color: var(--anthropic-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: var(--anthropic-warm-white);
+            border-bottom: 1px solid var(--anthropic-light-gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--anthropic-dark);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--crimson), var(--crimson-hover));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: -2px;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--anthropic-medium);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--anthropic-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--crimson);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--crimson);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--crimson);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px var(--shadow-light);
+        }
+
+        .cta-button:hover {
+            background: var(--crimson-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--shadow-medium);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--anthropic-dark), var(--crimson));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--anthropic-medium);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--anthropic-dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--crimson);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--crimson);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
         }
     </style>
 </head>
@@ -340,6 +556,13 @@
             <!-- Contact Form -->
             <div class="contact-form">
                 <h3>Send us a Message</h3>
+                
+                <!-- Success message (hidden by default) -->
+                <div id="formSuccess" class="form-success">
+                    Thank you for your message! We'll get back to you soon.
+                </div>
+
+                <!-- This form will submit directly to Formspree -->
                 <form id="contactForm" action="https://formspree.io/f/mqalqnjg" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
@@ -375,9 +598,10 @@
                         <textarea id="message" name="message" placeholder="Please provide details about your inquiry..." required></textarea>
                     </div>
 
-                    <!-- Formspree hidden fields -->
+                    <!-- Formspree configuration -->
                     <input type="hidden" name="_subject" value="Contact Form Submission - The Quant Brief">
-                    <input type="hidden" name="source" value="contact_page">
+                    <input type="hidden" name="_next" value="https://thequantbrief.com/contact.html?success=true">
+                    <input type="hidden" name="_captcha" value="false">
 
                     <button type="submit" class="form-submit">Send Message</button>
                 </form>
@@ -491,38 +715,23 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
     <script>
-        // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const submitButton = this.querySelector('.form-submit');
-            
-            // Disable submit button
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
-            
-            // Simple form validation
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            if (name && email && subject && message) {
-                // Simulate form submission (replace with actual implementation)
-                setTimeout(() => {
-                    alert('Thank you for your message! We\'ll get back to you soon.');
-                    this.reset();
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Send Message';
-                }, 1000);
-            } else {
-                alert('Please fill in all required fields.');
-                submitButton.disabled = false;
-                submitButton.textContent = 'Send Message';
+        // Check for success parameter in URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                document.getElementById('formSuccess').style.display = 'block';
+                // Optionally scroll to the success message
+                document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth' });
             }
+
+            // Form submission handling - just show loading state
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function() {
+                const submitButton = this.querySelector('.form-submit');
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+            });
         });
 
         // FAQ toggle functionality
