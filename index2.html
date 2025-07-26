@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Quant Brief - Professional Investment Intelligence</title>
+    <meta name="description" content="Weekly quantitative finance analysis and investment intelligence for professional investors">
+    <meta name="keywords" content="quantitative finance, investment analysis, market research, portfolio management">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Quant Brief - Professional Investment Intelligence">
+    <meta property="og:description" content="Weekly quantitative finance analysis and investment intelligence for professional investors">
+    <meta property="og:url" content="https://thequantbrief.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="css/shared-styles.css">
+    
+    <style>
+        /* Homepage specific styles */
+        .hero {
+            background: linear-gradient(135deg, var(--anthropic-warm-white) 0%, var(--anthropic-beige) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(220,20,60,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--anthropic-dark), var(--crimson));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--anthropic-medium);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--anthropic-dark);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--crimson);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Newsletter Preview */
+        .newsletter-preview {
+            padding: 5rem 2rem;
+            background: var(--anthropic-beige);
+        }
+
+        .preview-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .preview-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--anthropic-dark);
+        }
+
+        .preview-content p {
+            font-size: 1.1rem;
+            color: var(--anthropic-medium);
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-mockup {
+            background: var(--anthropic-warm-white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 20px 40px var(--shadow-medium);
+            border: 1px solid var(--anthropic-light-gray);
+        }
+
+        .mockup-header {
+            border-bottom: 2px solid var(--crimson);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mockup-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--anthropic-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .mockup-subtitle {
+            color: var(--anthropic-medium);
+            font-size: 0.9rem;
+        }
+
+        .content-block {
+            background: var(--anthropic-beige);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .content-block h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--crimson);
+        }
+
+        .content-line {
+            height: 8px;
+            background: var(--anthropic-light-gray);
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-line.short {
+            width: 60%;
+        }
+
+        .content-line.medium {
+            width: 80%;
+        }
+
+        /* Subscribe Section */
+        .subscribe {
+            background: var(--anthropic-warm-white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .subscribe-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .subscribe h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--anthropic-dark);
+        }
+
+        .subscribe p {
+            font-size: 1.1rem;
+            color: var(--anthropic-medium);
+            margin-bottom: 2.5rem;
+        }
+
+        .subscribe-form {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--anthropic-light-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            background: var(--anthropic-beige);
+            transition: var(--transition);
+        }
+
+        .subscribe-form input:focus {
+            outline: none;
+            border-color: var(--crimson);
+            box-shadow: 0 0 0 3px var(--crimson-light);
+        }
+
+        .subscribe-form button {
+            background: var(--crimson);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .subscribe-form button:hover {
+            background: var(--crimson-hover);
+            transform: translateY(-2px);
+        }
+
+        .subscribe-note {
+            font-size: 0.9rem;
+            color: var(--anthropic-medium);
+        }
+
+        .coming-soon {
+            display: inline-block;
+            background: var(--warning);
+            color: var(--anthropic-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .preview-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .subscribe-form {
+                flex-direction: column;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">QB</div>
+                <div class="logo-text">
+                    <h1>The Quant Brief</h1>
+                    <p>Professional Investment Intelligence</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#subscribe" class="cta-button">Subscribe</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container animate-in">
+            <h1>Professional Investment Intelligence</h1>
+            <p>Weekly quantitative finance analysis, market insights, and research for institutional investors and portfolio managers.</p>
+            <div class="hero-buttons">
+                <a href="#subscribe" class="btn-primary">Subscribe Now</a>
+                <a href="features.html" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>52</h3>
+                <p>Issues Per Year</p>
+            </div>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Data Sources</p>
+            </div>
+            <div class="stat-item">
+                <h3>5</h3>
+                <p>Minute Read</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Professional Focus</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Preview -->
+    <section class="newsletter-preview">
+        <div class="preview-container">
+            <div class="preview-content">
+                <h2>Preview Our Format<span class="coming-soon">Coming Soon</span></h2>
+                <p>Each week, receive a professionally formatted newsletter with comprehensive market analysis, research insights, and actionable intelligence. Our LaTeX-formatted reports provide institutional-quality presentation with clear data visualization.</p>
+                <a href="#subscribe" class="btn-primary">Get Early Access</a>
+            </div>
+            <div class="newsletter-mockup">
+                <div class="mockup-header">
+                    <div class="mockup-title">The Quant Brief</div>
+                    <div class="mockup-subtitle">Issue #1 | January 26, 2025</div>
+                </div>
+                <div class="mockup-content">
+                    <div class="content-block">
+                        <h4>Weekly Highlights</h4>
+                        <div class="content-line"></div>
+                        <div class="content-line medium"></div>
+                        <div class="content-line short"></div>
+                    </div>
+                    <div class="content-block">
+                        <h4>Market Overview</h4>
+                        <div class="content-line"></div>
+                        <div class="content-line short"></div>
+                    </div>
+                    <div class="content-block">
+                        <h4>Research Spotlight</h4>
+                        <div class="content-line medium"></div>
+                        <div class="content-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section id="subscribe" class="subscribe">
+        <div class="subscribe-container">
+            <h2>Subscribe to The Quant Brief</h2>
+            <p>Join institutional investors and portfolio managers who rely on our weekly analysis. Be among the first to receive our inaugural issue.</p>
+            <form class="subscribe-form" id="subscribeForm">
+                <input type="email" placeholder="Enter your professional email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p class="subscribe-note">Professional subscribers only. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>The Quant Brief</h3>
+                <p>Professional investment intelligence for quantitative finance professionals and institutional investors.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="about.html">About</a></p>
+                <p><a href="features.html">Features</a></p>
+                <p><a href="#subscribe">Subscribe</a></p>
+                <p><a href="archive.html">Archive</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:contact@thequantbrief.com">contact@thequantbrief.com</a></p>
+                <p><a href="mailto:research@thequantbrief.com">research@thequantbrief.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p><a href="#privacy">Privacy Policy</a></p>
+                <p><a href="#terms">Terms of Service</a></p>
+                <p><a href="#disclaimer">Disclaimer</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Quant Brief. All rights reserved. | Professional Investment Intelligence</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
