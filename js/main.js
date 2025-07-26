@@ -19,27 +19,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const subscribeForm = document.getElementById('subscribeForm');
     if (subscribeForm) {
         subscribeForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
+            // Let Formspree handle the submission, but provide user feedback
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
             
-            // Simple validation
-            if (email && email.includes('@')) {
-                // Show loading state
-                const button = this.querySelector('button[type="submit"]');
-                const originalText = button.textContent;
-                button.textContent = 'Subscribing...';
-                button.disabled = true;
-                
-                // Simulate API call (replace with actual implementation)
-                setTimeout(() => {
-                    alert('Thank you for subscribing! You\'ll be notified when we launch.');
-                    this.querySelector('input[type="email"]').value = '';
-                    button.textContent = originalText;
-                    button.disabled = false;
-                }, 1000);
-            } else {
-                alert('Please enter a valid email address.');
-            }
+            // Show loading state
+            button.textContent = 'Subscribing...';
+            button.disabled = true;
+            
+            // Re-enable button after a delay (Formspree will handle the redirect)
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 2000);
         });
     }
 
