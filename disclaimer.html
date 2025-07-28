@@ -15,36 +15,206 @@
     <link rel="stylesheet" href="css/shared-styles.css">
     
     <style>
-        .warning-box {
-            background: #FFF3CD;
-            border: 2px solid #FFC107;
-            color: #856404;
+        .legal-hero {
+            background: linear-gradient(135deg, var(--anthropic-warm-white) 0%, var(--anthropic-beige) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .legal-content {
+            background: var(--anthropic-warm-white);
+            padding: 4rem 2rem;
+        }
+
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--anthropic-beige);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
+        }
+
+        .legal-container h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            color: var(--crimson);
+            border-bottom: 2px solid var(--crimson-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .legal-container h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+            color: var(--anthropic-dark);
+        }
+
+        .legal-container p {
+            color: var(--anthropic-medium);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .legal-container ul {
+            color: var(--anthropic-medium);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .legal-container li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            background: var(--anthropic-warm-white);
             padding: 1.5rem;
             border-radius: var(--border-radius);
+            border: 1px solid var(--anthropic-light-gray);
             margin: 2rem 0;
-            font-weight: 500;
+        }
+
+        .contact-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--anthropic-dark);
+        }
+
+        .contact-info a {
+            color: var(--crimson);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .effective-date {
+            font-style: italic;
+            color: var(--anthropic-medium);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .critical-notice {
+            background: linear-gradient(135deg, #DC3545, #C82333);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 8px 24px rgba(220, 53, 69, 0.3);
+        }
+
+        .critical-notice h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .warning-box {
+            background: #FFF8E1;
+            border-left: 4px solid #FF9800;
+            color: #E65100;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
         }
 
         .warning-box h4 {
-            color: #856404;
+            color: #E65100;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .risk-highlight {
-            background: #F8D7DA;
-            border: 2px solid #DC3545;
-            color: #721C24;
+        .info-box {
+            background: #E3F2FD;
+            border-left: 4px solid #1976D2;
+            color: #0D47A1;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .info-box h4 {
+            color: #0D47A1;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .disclaimer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .disclaimer-card {
+            background: var(--anthropic-warm-white);
             padding: 1.5rem;
             border-radius: var(--border-radius);
-            margin: 2rem 0;
-            font-weight: 500;
+            border: 1px solid var(--anthropic-light-gray);
+            box-shadow: 0 4px 12px var(--shadow-light);
         }
 
-        .risk-highlight h4 {
-            color: #721C24;
+        .disclaimer-card h4 {
+            color: var(--crimson);
             font-weight: 600;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .disclaimer-card p {
+            font-size: 0.95rem;
+        }
+
+        .risk-meter {
+            background: linear-gradient(90deg, #28A745, #FFC107, #DC3545);
+            height: 8px;
+            border-radius: 4px;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .risk-indicator {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 12px solid #DC3545;
+        }
+
+        .final-acknowledgment {
+            background: var(--anthropic-dark);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .final-acknowledgment h3 {
+            color: var(--crimson);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .disclaimer-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -73,8 +243,8 @@
     <section class="legal-hero">
         <div class="container">
             <div class="page-header">
-                <h1>Investment Disclaimer</h1>
-                <p>Important risk disclosures and limitations</p>
+                <h1>Financial Disclaimer</h1>
+                <p>Critical risk disclosures and investment warnings</p>
             </div>
         </div>
     </section>
@@ -83,167 +253,165 @@
     <section class="legal-content">
         <div class="legal-container">
             <div class="effective-date">
-                Effective Date: January 28, 2025
+                Last Updated: January 28, 2025
             </div>
 
-            <div class="risk-highlight">
-                <h4>⚠️ IMPORTANT INVESTMENT RISK DISCLOSURE</h4>
-                <p>The information provided in The Quant Brief is for educational and informational purposes only and does not constitute investment advice, financial advice, trading advice, or any other sort of advice. Nothing in our newsletter should be construed as a recommendation to buy, sell, or hold any investment or security.</p>
+            <div class="critical-notice">
+                <h3>🚨 CRITICAL INVESTMENT WARNING</h3>
+                <p>The Quant Brief provides educational content only. We are NOT investment advisors. Nothing we publish should be considered personalized investment advice. All investments carry substantial risk of loss. You could lose your entire investment.</p>
             </div>
 
-            <h2>1. No Investment Advice</h2>
+            <h2>Educational Purpose Only</h2>
             
-            <p>The Quant Brief and its authors do not provide personalized investment advice or act as investment advisors. Our content includes:</p>
-            <ul>
-                <li>General market analysis and commentary</li>
-                <li>Educational content about quantitative finance concepts</li>
-                <li>Data analysis and interpretation</li>
-                <li>Academic research summaries</li>
-                <li>Market trends and observations</li>
-            </ul>
+            <p>The Quant Brief exists solely to educate readers about quantitative finance concepts, market analysis techniques, and investment research methodologies. Our content includes market commentary, data analysis, research summaries, and educational materials designed for finance professionals.</p>
 
-            <p><strong>None of this content should be considered as recommendations for specific investment actions.</strong></p>
-
-            <h2>2. Investment Risks</h2>
-            
             <div class="warning-box">
-                <h4>All Investments Carry Risk</h4>
-                <p>Investing in securities, derivatives, currencies, commodities, and other financial instruments involves substantial risk of loss. Past performance does not guarantee future results. You may lose some or all of your invested capital.</p>
+                <h4>⚠️ Not Investment Advice</h4>
+                <p>We do not provide investment recommendations, stock picks, trading signals, or personalized financial advice. Any mention of specific securities, strategies, or market positions is for educational illustration only.</p>
             </div>
 
-            <h3>Specific Risk Factors Include:</h3>
+            <h2>Investment Risk Disclosure</h2>
+
+            <div class="risk-meter">
+                <div class="risk-indicator"></div>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; margin-top: -0.5rem;"><em>All investments carry HIGH RISK</em></p>
+
+            <div class="disclaimer-grid">
+                <div class="disclaimer-card">
+                    <h4>📉 Market Risk</h4>
+                    <p>Securities can lose value rapidly and substantially. Market conditions change without warning, and past performance never guarantees future results.</p>
+                </div>
+                
+                <div class="disclaimer-card">
+                    <h4>💎 Volatility Risk</h4>
+                    <p>Financial markets experience extreme price swings. What goes up can come down faster than you expect, potentially wiping out gains instantly.</p>
+                </div>
+                
+                <div class="disclaimer-card">
+                    <h4>🏦 Credit Risk</h4>
+                    <p>Companies can default, bonds can become worthless, and counterparties can fail to meet obligations without notice.</p>
+                </div>
+                
+                <div class="disclaimer-card">
+                    <h4>🌍 Systematic Risk</h4>
+                    <p>Economic crises, geopolitical events, and market crashes can affect all investments simultaneously, regardless of diversification.</p>
+                </div>
+            </div>
+
+            <h2>Our Content Limitations</h2>
+
+            <div class="info-box">
+                <h4>📊 Data and Analysis</h4>
+                <p>Our analysis relies on publicly available data that may be inaccurate, outdated, or incomplete. Market conditions change continuously, and our analysis reflects information available at the time of publication only.</p>
+            </div>
+
+            <h3>What We Cannot Guarantee:</h3>
             <ul>
-                <li><strong>Market Risk:</strong> Values of investments can decline due to market conditions</li>
-                <li><strong>Volatility Risk:</strong> Prices may fluctuate significantly over short periods</li>
-                <li><strong>Liquidity Risk:</strong> Some investments may be difficult to sell quickly</li>
-                <li><strong>Credit Risk:</strong> Issuers may default on their obligations</li>
-                <li><strong>Interest Rate Risk:</strong> Changes in rates can affect bond and equity values</li>
-                <li><strong>Currency Risk:</strong> Foreign exchange fluctuations can impact returns</li>
-                <li><strong>Concentration Risk:</strong> Lack of diversification can amplify losses</li>
-                <li><strong>Model Risk:</strong> Quantitative models may be flawed or inappropriate</li>
+                <li>Accuracy of data from third-party sources</li>
+                <li>Completeness of market information</li>
+                <li>Timeliness of analysis or commentary</li>
+                <li>Absence of errors in calculations or interpretation</li>
+                <li>Relevance to your specific situation</li>
+                <li>Compliance with your local regulations</li>
             </ul>
 
-            <h2>3. Data and Information Accuracy</h2>
-            
-            <h3>No Warranty of Accuracy</h3>
-            <p>While we strive to ensure the accuracy of information in our newsletter:</p>
-            <ul>
-                <li>We do not guarantee the accuracy, completeness, or timeliness of any information</li>
-                <li>Market data and conditions change rapidly and continuously</li>
-                <li>Information may become outdated between publication and reading</li>
-                <li>Errors in data sources or analysis may occur</li>
-                <li>Third-party data providers may have their own limitations and disclaimers</li>
-            </ul>
+            <h2>Professional Consultation Required</h2>
 
-            <h3>Sources and Methodology</h3>
-            <p>Our analysis is based on publicly available information from various sources including but not limited to:</p>
-            <ul>
-                <li>Government agencies and central banks</li>
-                <li>Financial data providers</li>
-                <li>Academic research papers</li>
-                <li>SEC filings and corporate reports</li>
-                <li>Market data feeds</li>
-            </ul>
-
-            <p>We are not responsible for the accuracy of information from these third-party sources.</p>
-
-            <h2>4. Forward-Looking Statements</h2>
-            
-            <p>Our newsletter may contain forward-looking statements, projections, or opinions about future market conditions, economic trends, or investment performance. These statements:</p>
-            <ul>
-                <li>Are based on current information and assumptions</li>
-                <li>Are subject to significant uncertainties and risks</li>
-                <li>May not materialize as expected</li>
-                <li>Should not be relied upon for investment decisions</li>
-                <li>Are not guarantees of future performance</li>
-            </ul>
-
-            <h2>5. Professional Consultation</h2>
-            
             <div class="warning-box">
-                <h4>Seek Professional Advice</h4>
-                <p>Before making any investment decisions, you should consult with qualified financial professionals, including licensed investment advisors, tax professionals, and legal counsel, who can provide personalized advice based on your specific financial situation, investment objectives, and risk tolerance.</p>
+                <h4>🏛️ Seek Qualified Advice</h4>
+                <p>Before making ANY investment decisions, consult with licensed investment advisors, tax professionals, and legal counsel who understand your specific financial situation, goals, and risk tolerance.</p>
             </div>
 
-            <h2>6. Regulatory Compliance</h2>
-            
-            <h3>Not a Registered Investment Advisor</h3>
-            <p>The Quant Brief and its authors are not registered investment advisors, broker-dealers, or financial planners. We do not:</p>
+            <p>Professional advisors can provide:</p>
             <ul>
-                <li>Provide investment advisory services</li>
-                <li>Manage client portfolios</li>
-                <li>Execute trades on behalf of clients</li>
-                <li>Provide tax or legal advice</li>
-                <li>Act as fiduciaries</li>
+                <li>Personalized investment recommendations</li>
+                <li>Tax-efficient strategies for your situation</li>
+                <li>Estate planning considerations</li>
+                <li>Regulatory compliance guidance</li>
+                <li>Risk assessment based on your circumstances</li>
             </ul>
 
-            <h3>Jurisdiction Considerations</h3>
-            <p>Investment laws and regulations vary by jurisdiction. Content in our newsletter may not be suitable or legal for readers in all jurisdictions. It is your responsibility to comply with applicable laws and regulations in your jurisdiction.</p>
+            <h2>Regulatory Status</h2>
 
-            <h2>7. Personal Responsibility</h2>
-            
-            <p>By subscribing to and reading The Quant Brief, you acknowledge and agree that:</p>
+            <p>The Quant Brief and its authors are <strong>NOT</strong>:</p>
             <ul>
-                <li>You are solely responsible for your investment decisions</li>
-                <li>You will conduct your own due diligence before making investments</li>
-                <li>You understand the risks associated with investing</li>
-                <li>You will not rely solely on our content for investment decisions</li>
-                <li>You have the financial capacity to bear potential losses</li>
+                <li>Registered investment advisors (RIAs)</li>
+                <li>Licensed broker-dealers</li>
+                <li>Certified financial planners</li>
+                <li>Tax advisors or accountants</li>
+                <li>Legal counsel</li>
+                <li>Fiduciaries to subscribers</li>
             </ul>
 
-            <h2>8. Conflicts of Interest</h2>
-            
-            <p>While we strive to maintain independence in our analysis, potential conflicts of interest may exist:</p>
-            <ul>
-                <li>We may hold positions in securities mentioned in our newsletter</li>
-                <li>We may have business relationships with financial services providers</li>
-                <li>We may receive compensation from third parties (if applicable)</li>
-            </ul>
-
-            <p>Any material conflicts of interest will be disclosed when relevant.</p>
-
-            <h2>9. Limitation of Liability</h2>
-            
-            <div class="risk-highlight">
-                <h4>Limited Liability</h4>
-                <p>Under no circumstances shall The Quant Brief, its authors, or affiliates be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from your use of our newsletter or any investment decisions made based on our content.</p>
+            <div class="info-box">
+                <h4>🌐 International Readers</h4>
+                <p>Investment laws vary significantly by country. Our content may not be suitable or legal in your jurisdiction. It's your responsibility to comply with local regulations and seek appropriate local professional advice.</p>
             </div>
 
-            <h2>10. International Considerations</h2>
-            
-            <p>Our content may reference international markets, currencies, and investments. Additional risks may apply to international investing, including:</p>
+            <h2>Forward-Looking Statements</h2>
+
+            <p>Our newsletter may include projections, forecasts, or opinions about future market conditions. These forward-looking statements are based on current information and assumptions that may prove incorrect. They should not be relied upon for investment decisions.</p>
+
+            <div class="warning-box">
+                <h4>🔮 Future Performance</h4>
+                <p>No one can predict market movements with certainty. Economic conditions, political events, and market sentiment can change rapidly and unpredictably, making all forecasts unreliable.</p>
+            </div>
+
+            <h2>Technology and Model Limitations</h2>
+
+            <p>Our analysis may incorporate quantitative models, AI-assisted research, and algorithmic tools. These technologies have inherent limitations:</p>
             <ul>
-                <li>Political and economic instability</li>
-                <li>Different regulatory environments</li>
-                <li>Currency exchange rate fluctuations</li>
-                <li>Limited liquidity in some markets</li>
-                <li>Different accounting and reporting standards</li>
+                <li>Models are based on historical data that may not predict future behavior</li>
+                <li>AI systems can have biases, errors, or unexpected behaviors</li>
+                <li>Market regimes can shift in ways that invalidate model assumptions</li>
+                <li>Technical failures or programming errors may occur</li>
+                <li>Black swan events can break all models simultaneously</li>
             </ul>
 
-            <h2>11. Technology and Model Limitations</h2>
-            
-            <p>Our analysis may incorporate quantitative models and AI-assisted research. These tools have limitations:</p>
+            <h2>Conflicts of Interest</h2>
+
+            <p>We strive for independence, but potential conflicts may exist:</p>
             <ul>
-                <li>Models are based on historical data and assumptions</li>
-                <li>AI systems may have biases or errors</li>
-                <li>Market conditions may change in ways not captured by models</li>
-                <li>Technology failures or errors may occur</li>
+                <li>We may hold positions in securities discussed</li>
+                <li>We may have business relationships with financial services companies</li>
+                <li>We may receive compensation from partnerships (when disclosed)</li>
+                <li>Our personal biases may influence analysis</li>
             </ul>
 
-            <h2>12. Updates and Changes</h2>
-            
-            <p>This disclaimer may be updated from time to time. Material changes will be communicated to subscribers. Your continued subscription after changes constitutes acceptance of the updated disclaimer.</p>
+            <p>Material conflicts will be disclosed when relevant to the content.</p>
+
+            <h2>Limitation of Liability</h2>
+
+            <p>Under no circumstances will The Quant Brief, its authors, or affiliates be liable for any losses, damages, costs, or expenses arising from:</p>
+            <ul>
+                <li>Investment decisions based on our content</li>
+                <li>Inaccuracies or errors in our analysis</li>
+                <li>Technical failures or service interruptions</li>
+                <li>Third-party data provider errors</li>
+                <li>Market volatility or systematic risks</li>
+                <li>Regulatory changes affecting investments</li>
+            </ul>
+
+            <div class="final-acknowledgment">
+                <h3>Your Acknowledgment</h3>
+                <p>By subscribing to The Quant Brief, you acknowledge that:</p>
+                <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                    <li>You understand investing involves substantial risk of loss</li>
+                    <li>You will not rely solely on our content for investment decisions</li>
+                    <li>You will seek professional advice before investing</li>
+                    <li>You accept full responsibility for your investment choices</li>
+                    <li>You have read and understood this entire disclaimer</li>
+                </ul>
+            </div>
 
             <div class="contact-info">
-                <h4>Questions about this disclaimer? Contact us:</h4>
+                <h4>Questions about this disclaimer?</h4>
                 <p>Email: <a href="mailto:legal@thequantbrief.com">legal@thequantbrief.com</a></p>
-                <p>General Contact: <a href="mailto:contact@thequantbrief.com">contact@thequantbrief.com</a></p>
-                <p>Website: <a href="https://thequantbrief.com">https://thequantbrief.com</a></p>
+                <p>General inquiries: <a href="mailto:contact@thequantbrief.com">contact@thequantbrief.com</a></p>
             </div>
 
-            <div class="risk-highlight">
-                <p><strong>By subscribing to The Quant Brief, you acknowledge that you have read, understood, and agree to this disclaimer. You understand that investing involves risk and that you are solely responsible for your investment decisions.</strong></p>
-            </div>
+            <p><em>This disclaimer is part of our Terms of Service and may be updated periodically. Your continued subscription constitutes acceptance of any changes.</em></p>
         </div>
     </section>
 
